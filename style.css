@@ -52,9 +52,22 @@ a {
     padding: 5px 0;
 }
 .col-2 h1 {
+    display: block;
     font-size: 50px;
+    font-weight: 300;
     line-height: 60px;
     margin: 25px 0;
+    position: relative;
+    animation: text_reveal 3s ease forwards;
+    animation-delay: .3s;
+}
+.col-2 h1:nth-child(1) {
+    animation: text_reveal_name .3s ease forwards;
+    animation-delay: 1s;
+}
+.col-2 h1:nth-child(2) {
+    animation: text_reveal_name .3s ease forwards;
+    animation-delay: 2.5s;
 }
 .btn {
     display: inline-block;
@@ -201,10 +214,12 @@ small {
 
 /* Page7 */
 .footer {
+    height: 75vh;
     background: #000;
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    
 }
 .footer p {
     color: #8a8a8a;
@@ -322,6 +337,176 @@ input:focus {
     cursor: pointer;
 }
 
+/* Page2 */
+.cart-page {
+    margin: 50px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cart-info .cart-detail {
+    padding: 5px 7px;
+}
+th {
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+}
+td {
+    padding: 5px 5px;
+}
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+    margin-top: -15px;
+}
+td a {
+    color: #ff523b;
+    font-size: 1px;
+}
+td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.total-price {
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+.total-price table {
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 400px;
+}
+td:last-child {
+    text-align: right;
+}
+th:last-child {
+    text-align: right;
+}
+
+/* Page6 */ 
+.account-page {
+    padding: 50px 0;
+    background: radial-gradient(#fff, #ffd6d6);
+}
+.form-container {
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+}
+
+/* Page3 */
+.account-page {
+    padding: 50px 0;
+    background: radial-gradient(#fff, #ffd6d6);
+}
+.form-container {
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.form-container span {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+.form-btn {
+    display: inline-block;
+}
+.form-container form {
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+form input {
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+form .btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+form .btn:focus {
+    outline: none;
+}
+#LoginForm {
+    left: -300px;
+}
+#RegForm {
+    left: 0;
+}
+form a {
+    font-size: 12px;
+}
+#Indicator {
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+/* Page7 */
+.icons {
+    position: fixed;
+    top: 92%;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    overflow: hidden;
+    
+}
+.icons .col-6 {
+    line-height: 80px;
+    color: #fff;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+/* Keyframes */
+@keyframes text_reveal_name {
+    100% {
+        font-weight: bold;
+    }
+}
+@keyframes text_reveal {
+    100% {
+        color: #000000;
+    }
+}
 /* Media Query */
 @media screen and (max-width: 800px) {
     nav ul {
@@ -365,17 +550,10 @@ input:focus {
         font-size: 26px;
         line-height: 22px;
     }
-    .small-container {
-        max-width: 500px;
-        margin: auto;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
     .col-4 {
-        flex-basis: 25%;
-        padding: 10px;
-        min-width: 200px;
-        margin-bottom: 50px;
-        transition: transform 0.5s;
+        flex-basis: 55%;
+    }
+    .cart-info p {
+        display: none;
     }
 }
